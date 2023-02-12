@@ -3,10 +3,10 @@ import { render } from '@testing-library/react'
 
 import 'jest-canvas-mock'
 
-import Greeter from '../src/index'
+import Jxmutliselect from '../src/index'
 
 describe('Common render', () => {
   it('renders without crashing', () => {
-    render(<Greeter name='ayush' />)
+    render(<Jxmutliselect name='ayush' />)
   })
 })

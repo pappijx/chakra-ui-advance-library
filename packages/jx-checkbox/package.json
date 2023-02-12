@@ -1,11 +1,11 @@
 {
-  "name": "jx-chakra-multiselect",
+  "name": "jx-checkbox",
   "version": "1.0.0",
   "description": "A multi selector component for chakra base UI",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
-  "type": "module", 
+  "type": "module",
   "scripts": {
     "build": "npm run build:esm && npm run build:cjs",
     "build:esm": "tsc",
@@ -28,6 +28,7 @@
     "@types/react": "^18.0.12",
     "@typescript-eslint/eslint-plugin": "^5.27.1",
     "@typescript-eslint/parser": "^5.27.1",
+    "emotion-theming": "^11.0.0",
     "eslint": "^8.17.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
