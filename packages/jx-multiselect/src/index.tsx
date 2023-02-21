@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { Jxcheckbox } from 'jx-checkbox'
 import { TItem, TItemsList } from './types'
 import styled from 'styled-components'
