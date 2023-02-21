@@ -1,5 +1,5 @@
 {
-  "include": ["src", "../jx-multiselect/src/types.ts"],
+  "include": ["src"],
   "exclude": ["dist", "node_modules"],
   "compilerOptions": {
     "module": "esnext",
@@ -16,8 +16,10 @@
     "noUnusedParameters": true,
     "moduleResolution": "node",
     "jsx": "react",
+    "target": "ES6",
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "watch": true
   }
 }

@@ -1,7 +1,9 @@
 import { Flex } from "@chakra-ui/react";
 import { Jxmultiselect, IItem } from "jx-multiselect";
+import { useState } from "react";
 
 function MainPage() {
+  const [btn, setBtn] = useState(false);
   const itemList: IItem[] = [
     {
       label: "ayush",
@@ -44,7 +46,12 @@ function MainPage() {
       value: "ayush_9",
     },
   ];
-  return <Jxmultiselect itemList={itemList} />;
+  return (
+    <Flex width="40%">
+      <Jxmultiselect itemList={itemList} size="sm" />
+      <button onClick={() => setBtn(true)}>dsf</button>
+    </Flex>
+  );
 }
 
 export { MainPage };
