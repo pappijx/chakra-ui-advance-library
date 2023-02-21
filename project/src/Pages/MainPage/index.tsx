@@ -1,10 +1,10 @@
 import { Flex } from "@chakra-ui/react";
-import { Jxmultiselect, IItem } from "jx-multiselect";
+import { Jxmultiselect, TItem } from "jx-multiselect";
 import { useState } from "react";
 
 function MainPage() {
-  const [btn, setBtn] = useState(false);
-  const itemList: IItem[] = [
+  const [formList, setFormList] = useState<any[]>([]);
+  const itemList: TItem[] = [
     {
       label: "ayush",
       value: "ayush",
@@ -46,10 +46,12 @@ function MainPage() {
       value: "ayush_9",
     },
   ];
+
+  console.log(formList);
+  
   return (
     <Flex width="40%">
-      <Jxmultiselect itemList={itemList} size="sm" />
-      <button onClick={() => setBtn(true)}>dsf</button>
+      <Jxmultiselect itemList={itemList} size="sm" setListData={setFormList} />
     </Flex>
   );
 }

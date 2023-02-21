@@ -1,17 +1,18 @@
-type IItem = {
+type TItem = {
   label: string | number
   value: string | number
 }
 
-type ISize = {
+type TSize = {
   sm: string
   md: string
   lg: string
 }
 
-type IItemsList = {
-  itemList: IItem[]
+type TItemsList = {
+  itemList: TItem[]
   size?: any
+  setListData: (data: any) => void
 }
 
-export { IItemsList, IItem, ISize }
+export { TItem, TSize, TItemsList }
