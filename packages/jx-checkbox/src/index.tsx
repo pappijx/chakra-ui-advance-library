@@ -1,5 +1,4 @@
 import React from 'react'
-import { ICheckBox } from './types'
 import styled from 'styled-components'
 
 const Div: any = styled.div`
@@ -62,4 +61,4 @@ const Jxcheckbox = ({ label, value, onChange, ...props }: any) => {
   )
 }
 
-export { Jxcheckbox, ICheckBox }
+export default Jxcheckbox

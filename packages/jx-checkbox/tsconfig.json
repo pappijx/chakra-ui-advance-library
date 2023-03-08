@@ -3,7 +3,7 @@
   "exclude": ["dist", "node_modules"],
   "compilerOptions": {
     "module": "esnext",
-    "lib": ["dom", "esnext"],
+    "lib": ["es2017", "es7", "es6", "dom"],
     "importHelpers": true,
     "declaration": true,
     "sourceMap": true,
@@ -16,10 +16,10 @@
     "noUnusedParameters": true,
     "moduleResolution": "node",
     "jsx": "react",
-    "target": "ES6",
+    "target": "es5",
+    "types": ["jest", "node"],
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "watch": true
+    "forceConsistentCasingInFileNames": true
   }
 }

@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { Jxcheckbox } from 'jx-checkbox'
-import { TItem, TItemsList } from './types'
+import Jxcheckbox from 'jx-checkbox'
 import styled from 'styled-components'
 
 const sizeObj: any = {
@@ -87,7 +86,7 @@ const Tag: any = styled.div`
   border-radius: 4px;
 `
 
-const Jxmultiselect = ({ itemList, size = 'sm', setListData }: TItemsList) => {
+const Jxmultiselect = ({ itemList, size = 'sm', setListData }: any) => {
   const [isOpen, onOpen] = useState<boolean>(false)
   const selectedElements = useRef<any[]>([])
 
@@ -121,7 +120,7 @@ const Jxmultiselect = ({ itemList, size = 'sm', setListData }: TItemsList) => {
             <input type='text' onChange={selectItem} placeholder='search item here...' />
             {itemList.length ? (
               React.Children.toArray(
-                itemList.map((item: TItem) => {
+                itemList.map((item: any) => {
                   return (
                     <Jxcheckbox
                       label={item.label}
@@ -142,4 +141,4 @@ const Jxmultiselect = ({ itemList, size = 'sm', setListData }: TItemsList) => {
   )
 }
 
-export { Jxmultiselect, TItem, TItemsList }
+export default Jxmultiselect

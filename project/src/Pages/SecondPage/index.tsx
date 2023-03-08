@@ -4,4 +4,4 @@ function SecondPage() {
   return <div>SecondPage</div>;
 }
 
-export {SecondPage};
+export { SecondPage };

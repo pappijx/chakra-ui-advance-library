@@ -1,7 +1,7 @@
 {
   "name": "jx-checkbox",
-  "version": "1.0.0",
-  "description": "A checkbox component for chakra base UI",
+  "version": "1.0.4",
+  "description": "A checkbox component",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
@@ -26,6 +26,7 @@
   "devDependencies": {
     "@testing-library/react": "^13.4.0",
     "@types/jest": "^29.4.0",
+    "@types/mocha": "^10.0.1",
     "@types/react": "^18.0.12",
     "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^5.27.1",
@@ -52,6 +53,7 @@
   "files": [
     "dist",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "package.json"
   ]
 }

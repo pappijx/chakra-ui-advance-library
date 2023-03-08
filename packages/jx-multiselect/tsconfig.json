@@ -19,6 +19,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "target": "ES6"
+    "target": "ES6",
+    "types": ["jest", "node"]
   }
 }
