@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@chakra-ui/icons": "^2.0.19",
     "jx-response-generator": "^1.0.1"
   }
 }

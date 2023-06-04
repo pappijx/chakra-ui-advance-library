@@ -1,13 +1,18 @@
 import { Routes, Route } from "react-router-dom";
-import { MainPage, SecondPage } from "./Pages";
-import { MultiselectDoc } from "./components";
+import DashboardLayout from "./Pages/LayoutPage/DashboardLayout";
+import EcommerceLayout from "./Pages/LayoutPage/EcommerceLayout";
+import LayoutPage from "./Pages/LayoutPage";
 
 function AppRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<MainPage />} />
-      <Route path="/second" element={<SecondPage />} />
-      <Route path="/multiselect-dropdown" element={<MultiselectDoc />} />
+      <Route path="chakra">
+        <Route path="layout">
+          <Route path="as" element={<LayoutPage />} />
+          <Route path="dashboard" element={<DashboardLayout />} />
+          <Route path="ecommerce" element={<EcommerceLayout />} />
+        </Route>
+      </Route>
     </Routes>
   );
 }

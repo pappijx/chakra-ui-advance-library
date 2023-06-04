@@ -1,35 +1,90 @@
-import { Button, Flex, Text } from "@chakra-ui/react";
+import {
+  Button,
+  Flex,
+  IconButton,
+  Text,
+  useColorModeValue,
+  useDisclosure,
+} from "@chakra-ui/react";
 import { ColorModeSwitcher } from "../../ColorModeSwitcher";
+import React, { JSXElementConstructor, ReactElement } from "react";
+import DrawerTopNav from "./DrawerTopNav";
 
-interface ITopNav {
-  themeChanger: boolean;
-  logo: string;
-  setNavbar: (data: any) => void;
+export interface IProductItem {
+  name: string;
+  icon?: ReactElement<any, string | JSXElementConstructor<any>> | undefined;
+  redirect: string;
+  childrens?: IProductItem[];
 }
 
-function TopNav({ setNavbar }: ITopNav) {
+export interface ITopNav {
+  themeChanger: boolean;
+  setNavbar?: (data: any) => void;
+  hamBurgerIcon?:
+    | ReactElement<any, string | JSXElementConstructor<any>>
+    | undefined;
+  brandLogo?:
+    | ReactElement<any, string | JSXElementConstructor<any>>
+    | undefined;
+  profileDropdown?:
+    | ReactElement<any, string | JSXElementConstructor<any>>
+    | undefined;
+  productList?: IProductItem[];
+}
+
+function TopNav({
+  setNavbar,
+  hamBurgerIcon,
+  brandLogo = <Text>LOGO</Text>,
+  themeChanger,
+  profileDropdown,
+  productList,
+}: ITopNav) {
+  const text = useColorModeValue("dark", "light");
+  const SwitchBGColor = useColorModeValue("white", "gray.900");
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <nav>
-      <Flex
-        height="56px"
-        width="100%"
-        alignItems="center"
-        justifyContent="space-between"
-        position="fixed"
-        bgColor="blackAlpha.400"
-        zIndex="5000"
-        paddingX="1rem"
-        shadow="md"
-      >
-        <Flex alignItems="center" gap="1rem">
-          <Button onClick={() => setNavbar((prev: boolean) => !prev)}>
-            menu
-          </Button>
-          <Text>Components</Text>
-        </Flex>
-        <ColorModeSwitcher justifySelf="flex-end" />
+    <Flex
+      height="56px"
+      width="100%"
+      alignItems="center"
+      justifyContent="space-between"
+      zIndex="1"
+      paddingX="1rem"
+      shadow="md"
+      bgColor={SwitchBGColor}
+      position="relative"
+      onMouseLeave={onClose}
+    >
+      <Flex alignItems="center" gap="1rem">
+        {setNavbar && hamBurgerIcon && (
+          <IconButton
+            icon={hamBurgerIcon}
+            onClick={() => setNavbar((prev: boolean) => !prev)}
+            aria-label={""}
+            variant="unstyled"
+            minWidth="24px"
+            height="24px"
+            display="grid"
+            placeItems="center"
+          />
+        )}
+        {/* {hamburgerIcon} */}
+        {brandLogo}
       </Flex>
-    </nav>
+      <Flex alignItems="center">
+        {productList && (
+          <Button size="sm" onMouseOver={onOpen}>
+            Product
+          </Button>
+        )}
+        {themeChanger && <ColorModeSwitcher justifySelf="flex-end" />}
+        {profileDropdown && profileDropdown}
+      </Flex>
+      {productList && isOpen && (
+        <DrawerTopNav SwitchBGColor={SwitchBGColor} productList={productList} />
+      )}
+    </Flex>
   );
 }
 
