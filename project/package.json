@@ -17,6 +17,7 @@
     "chakra-react-select": "^4.5.0",
     "framer-motion": "^6.5.1",
     "jx-multiselect": "^1.0.0",
+    "jx-response-generator": "^1.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-email-editor": "^1.6.3",

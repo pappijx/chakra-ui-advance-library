@@ -48,16 +48,11 @@
   },
   "peerDependencies": {
     "react": ">=16",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "jx-checkbox": "^1.0.4"
   },
   "files": [
-    "dist",
-    "node_modules",
-    "src",
-    "package.json",
-    "tests",
-    ".eslintignore",
-    ".eslintrc"
+    "dist"
   ],
   "dependencies": {
     "jx-checkbox": "^1.0.4"

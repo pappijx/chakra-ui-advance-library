@@ -1,7 +1,7 @@
 import { Flex } from "@chakra-ui/react";
 import Jxmultiselect from "jx-multiselect";
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import { generateResponse } from "jx-response-generator";
 function MainPage() {
   const [formList, setFormList] = useState<any[]>([]);
   const itemList: any[] = [
@@ -47,7 +47,31 @@ function MainPage() {
     },
   ];
 
-  console.log(formList);
+  useEffect(() => {
+    const person = {
+      firstname: "ayush",
+      lastname: "papnai",
+      address: {
+        state: "UP",
+        district: "Ghaziabad",
+      },
+      contact: {
+        mobile: "8956642843",
+      },
+    };
+
+    const userType = {
+      type: ["Customer", "Sales"],
+    };
+
+    console.log(
+      generateResponse({ ...person, ...userType }, [
+        "firstname",
+        "lastname",
+        "type",
+      ])
+    );
+  }, []);
 
   return (
     <Flex width="40%">
