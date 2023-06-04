@@ -16,7 +16,10 @@ const DrawerTopNav = ({ productList }: any) => {
       zIndex={0}
       padding="1rem"
       wrap="wrap"
-      gap="2rem"
+      rowGap="1rem"
+      columnGap="2rem"
+      height="calc(50vh)"
+      overflow="auto"
     >
       {React.Children.toArray(
         productList.map((item: IProductItem) => {

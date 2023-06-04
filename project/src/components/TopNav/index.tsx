@@ -74,7 +74,11 @@ function TopNav({
       </Flex>
       <Flex alignItems="center">
         {productList && (
-          <Button size="sm" onMouseOver={onOpen}>
+          <Button
+            size="sm"
+            onClick={isOpen ? onClose : onOpen}
+            onMouseOver={onOpen}
+          >
             Product
           </Button>
         )}
